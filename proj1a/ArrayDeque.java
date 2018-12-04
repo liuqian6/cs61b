@@ -108,39 +108,4 @@ public class ArrayDeque<T> {
         int position = (nextFirst + 1 + index) % items.length;
         return items[position];
     }
-
-    public static void main(String args[]) {
-        ArrayDeque<String> arrays = new ArrayDeque<>();
-        arrays.addFirst("a");
-        arrays.addFirst("b");
-        arrays.addFirst("c");
-        arrays.addLast("d");
-        arrays.addLast("e");
-        arrays.addLast("f");
-        arrays.addLast("g");
-        arrays.addLast("h");
-        arrays.addLast("i");
-        arrays.addLast("j");
-        arrays.addLast("k");
-        arrays.addFirst("l");
-        arrays.addFirst("m");
-        arrays.addFirst("n");
-        arrays.removeLast();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.removeFirst();
-        arrays.printDeque();
-    }
 }
