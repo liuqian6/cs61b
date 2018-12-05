@@ -57,4 +57,55 @@ public class LinkedListDeque<T> {
     public int size() {
         return size;
     }
+
+    public void printDeque() {
+        LinkedNode p = sentinel.pre;
+        while (p != sentinel) {
+            System.out.print(p.item + " ");
+            p = p.next;
+        }
+    }
+
+    public T removeFirst() {
+        if (size == 0) {
+            return null;
+        }
+        size -= 1;
+        LinkedNode p = sentinel.pre;
+        sentinel.pre = p.next;
+        p.next.pre = sentinel;
+        if (size == 0) {
+            sentinel.next = sentinel;
+        }
+        p.next = null;
+        p.pre = null;
+        return p.item;
+    }
+
+    public T remoteLast() {
+        if (size == 0) {
+            return null;
+        }
+        size -= 1;
+        LinkedNode p = sentinel.next;
+        sentinel.next = p.pre;
+        p.pre.next = sentinel;
+        if (size == 0) {
+            sentinel.next = sentinel;
+        }
+        p.next = null;
+        p.pre = null;
+        return p.item;
+    }
+
+    public T get(int index) {
+        if (index > size) {
+            return null;
+        }
+        LinkedNode p = sentinel.pre;
+        for (int i = 0; i < index; i++) {
+            p = p.next;
+        }
+        return p.item;
+    }
 }
